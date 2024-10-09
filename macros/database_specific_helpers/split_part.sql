@@ -1,3 +1,7 @@
+{% macro column_identifier(column_index) -%}
+  {{ return(adapter.dispatch('column_identifier')(column_index)) }}
+{%- endmacro %}
+
 {% macro fabric__split_part(string_text, delimiter_text, part_number) -%}
     (
         SELECT max(value)
